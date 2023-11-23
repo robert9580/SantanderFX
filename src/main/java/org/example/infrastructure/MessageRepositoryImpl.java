@@ -15,7 +15,7 @@ import static java.util.Optional.ofNullable;
 
 class MessageRepositoryImpl implements MessageRepository, Message {
 
-    private static final EnumMap<InstrumentName, InstrumentPrice> INSTRUMENT_PRICE_LATEST_MAP = new EnumMap<>(InstrumentName.class);
+    private static final EnumMap<InstrumentName, InstrumentPrice> INSTRUMENT_PRICE_LATEST_MAP = new EnumMap<>(InstrumentName.class); //if we are dealing with multithreading should be Collections.synchronizedMap()
 
     private static final CsvMapper mapper;
     private static final CsvSchema schema;
